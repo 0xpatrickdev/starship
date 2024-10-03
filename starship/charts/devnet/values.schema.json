@@ -556,6 +556,53 @@
                 "amount"
               ]
             }
+          },
+          "readinessProbe": {
+            "type": "object",
+            "properties": {
+              "initialDelaySeconds": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "periodSeconds": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "timeoutSeconds": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "exec": {
+                "type": "object",
+                "properties": {
+                  "command": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "httpGet": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "port": {
+                    "type": "string"
+                  }
+                }
+              },
+              "tcpSocket": {
+                "type": "object",
+                "properties": {
+                  "port": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         },
         "additionalProperties": false,
